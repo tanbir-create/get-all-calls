@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const {MongoClient}  = require('mongodb')
-
+const PORT = process.env.PORT || 8000
 const app = express();
 
 
@@ -34,7 +34,7 @@ MongoClient.connect(
     async function (err, client) {
        
       db = client.db()
-      app.listen(8000, ()=>{console.log(`port: ${'sfsf'}`)})
+      app.listen(PORT, ()=>{console.log(`port: ${'sfsf'}`)})
       
     }
   )
