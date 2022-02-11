@@ -14,11 +14,11 @@ app.use(cors());
 
 app.get('/get-all-calls', async(req, res)=>{
 
-    let calls = await db.collection('useralls').find({}).toArray()
+    let callsDb = await db.collection('useralls').find({}).toArray()
     
-    let t = calls[0].arra.concat(calls[1].arra)
+    let calls = callsDb[0].arra.concat(callsDb[1].arra)
     return res.status(200).json({
-        t
+        calls
       
     })
     
